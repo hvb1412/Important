@@ -1,9 +1,9 @@
 # DevShare Lite
 
 ## 📌 Thông tin tác giả
-- 👨‍🎓 Họ tên: Hoàng Văn Bình  
-- 🎓 Trường: Trường Công nghệ thông tin và Truyền thông - Đại học Bách khoa Hà Nội
-- 🆔 MSSV: 20521234
+👨‍🎓 **Họ tên**: Hoàng Văn Bình  
+🎓 **Trường**: Trường Công nghệ thông tin & Truyền thông, Đại học Bách khoa Hà Nội
+🆔 **MSSV**: 20521234
 
 ## 🧩 Tổng quan dự án
 
@@ -65,7 +65,7 @@ Mục tiêu của dự án là tạo ra một môi trường học tập năng �
 
 
 ## 🗂️ Cấu trúc thư mục dự án
-### Frontend: NextJs/forum
+### Frontend: NextJS/forum
 src/
 ├── app/
 │   ├── (auth)/                    # Xử lý xác thực (login, register)
@@ -97,7 +97,7 @@ src/
 ├── package.json                  # Danh sách dependencies & script
 └── README.md                     # Tài liệu mô tả frontend
 
-### Backend/server
+### Backend: NodeJS/server
 source_code/backend/
 ├── controller/             # Chứa các controller xử lý logic cho từng phần (user, post, comment, ...)
 │   ├── categoryController.js
@@ -129,57 +129,57 @@ source_code/backend/
 
 ## Hướng dẫn cài đặt và khởi chạy dự án
 - Clone tất cả các thư mục có trên git về máy local: "https://github.com/hvb1412/Important.git"
-- ![Tạo 1 thư mục mới, sau đó mở Git Bash trên thư mục này](image.png)
-- ![Sử dụng câu lệnh sau để clone tất cả thư mục về máy: "git clone https://github.com/hvb1412/Important.git"](image-1.png)
-- ![Sau khi clone, ta sẽ thu được thư mục Important chứa 2 thư mục con là NextJS và NodeJS](image-2.png)
-- ![Mở thư mục Important trong VS Code, sau đó bật Terminal của VS Code lên](image-3.png)
-- ![Terminal đã được bật](image-4.png)
+- ![Tạo 1 thư mục mới, sau đó mở Git Bash trên thư mục này](./images/image.png)
+- ![Sử dụng câu lệnh sau để clone tất cả thư mục về máy: "git clone https://github.com/hvb1412/Important.git"](./images/image-1.png)
+- ![Sau khi clone, ta sẽ thu được thư mục Important chứa 2 thư mục con là NextJS và NodeJS](./images/image-2.png)
+- ![Mở thư mục Important trong VS Code, sau đó bật Terminal của VS Code lên](./images/image-3.png)
+- ![Terminal đã được bật](./images/image-4.png)
 
 **Chú ý**: Nếu máy local chưa có NodeJS thì cần phải download NodeJS về máy và cài đặt NodeJS
 
 ### Cài đặt Frontend
-- ![Chạy các câu lệnh như trong ảnh để tiến hành cài đặt những tài nguyên cần thiết](image-5.png)
-- ![Màn hình Terminal hiện thông báo như sau là đã kết thúc quá trình cài đặt tài nguyên](image-6.png)
-- ![Chạy câu lệnh: "npm run dev" để khởi chạy Frontend](image-7.png)
-- ![Màn hình Terminal hiển thị như hình bên là đã khởi chạy thành công, đường link Local hiện trên màn hình Terminal: "http://localhost:3000" là đường link dùng để truy cập trang web DevShare Lite](image-8.png)
+- ![Chạy các câu lệnh như trong ảnh để tiến hành cài đặt những tài nguyên cần thiết](./images/image-5.png)
+- ![Màn hình Terminal hiện thông báo như sau là đã kết thúc quá trình cài đặt tài nguyên](./images/image-6.png)
+- ![Chạy câu lệnh: "npm run dev" để khởi chạy Frontend](./images/image-7.png)
+- ![Màn hình Terminal hiển thị như hình bên là đã khởi chạy thành công, đường link Local hiện trên màn hình Terminal: "http://localhost:3000" là đường link dùng để truy cập trang web DevShare Lite](./images/image-8.png)
 
 **Chú ý**: Trước khi truy cập vào trang web, chúng ta cần cài đặt Backend
 
 ### Cài đặt Backend
 #### Restore Database
-- ![Trong thư mục NodeJS được git clone về, chúng ta sẽ thấy 1 file database.dump tên: "ForumDB.dump"](image-10.png)
+- ![Trong thư mục NodeJS được git clone về, chúng ta sẽ thấy 1 file database.dump tên: "ForumDB.dump"](./images/image-10.png)
 - Copy file ForumDB.dump ra bên ngoài 1 ổ đĩa nào đấy, ví dụ: ổ C, ổ D, ổ E... tùy thuộc vào máy tính local của người dùng
-- ![Đây là ví dụ về việc copy file "ForumDB.dump" ra ổ đĩa D](image-11.png)
+- ![Đây là ví dụ về việc copy file "ForumDB.dump" ra ổ đĩa D](./images/image-11.png)
 - Tiếp theo, chúng ta sẽ dùng Terminal của Window để restore database về PgAdmin4
 
 **Chú ý**: Cần phải cài đặt PostgreSQL trước khi tiến hành restore
 
 - Nếu người dùng đã cài đặt PostgreSQL, thì hãy làm theo các bước sau:
-- ![Mở thư mục đã cài đặt PostgreSQL](image-12.png)
+- ![Mở thư mục đã cài đặt PostgreSQL](./images/image-12.png)
 - Bên trong thư mục này, chúng ta sẽ thấy 1 thư mục con, có tên là "bin"
-- ![Mở thư mục "bin" này lên](image-13.png)
-- ![Sau đó, tại thanh tìm kiếm trên cùng, gõ dòng chữ "cmd" để có thể mở Terminal của Window dẫn trực tiếp đến thư mục bin của PostgreSQL](image-14.png)
-- ![Kết quả Terminal nếu mở thành công sẽ như sau](image-15.png)
+- ![Mở thư mục "bin" này lên](./images/image-13.png)
+- ![Sau đó, tại thanh tìm kiếm trên cùng, gõ dòng chữ "cmd" để có thể mở Terminal của Window dẫn trực tiếp đến thư mục bin của PostgreSQL](./images/image-14.png)
+- ![Kết quả Terminal nếu mở thành công sẽ như sau](./images/image-15.png)
 - Chúng ta cần tạo 1 database rỗng trong PostgreSQL trước khi restore dữ liệu của file "ForumDB.dmp" về máy
 - Nhập câu lệnh: "psql postgres postgres" vào Terminal rồi Enter, nó sẽ yêu cầu nhập Password. Password này chính là password chúng ta đã tạo khi cài đặt PostgreSQL về máy
 
 **Chú ý**: Trong quá trình nhập password, Terminal sẽ không hiển thị gì cả, người dùng chủ động nhập đúng password rồi nhấn Enter
 
-- ![Nếu thành công, ta sẽ thu được màn hình Terminal như sau](image-16.png)
+- ![Nếu thành công, ta sẽ thu được màn hình Terminal như sau](./images/image-16.png)
 - Sử dụng câu lệnh: "CREATE DATABASE important;" để tạo 1 database rỗng (important là tên của database, bạn có thể đổi tên tùy theo bạn muốn)
-- ![Kết quả nếu thành công](image-17.png)
-- ![Sử dụng câu lệnh "\q" để out ra, trở về màn hình của thư mục bin](image-18.png)
+- ![Kết quả nếu thành công](./images/image-17.png)
+- ![Sử dụng câu lệnh "\q" để out ra, trở về màn hình của thư mục bin](./images/image-18.png)
 - Sử dụng câu lệnh sau để tiến hành restore dữ liệu từ file "ForumDB.dump": "pg_restore -d important -U postgres D:\ForumDB.dump"
 
-**Chú ý**: ![Nhớ ghi đúng đường link của file "ForumDB.dump" và tên database mà bạn đã tạo, sau khi hoàn thành nhấn Enter](image-20.png)
+**Chú ý**: ![Nhớ ghi đúng đường link của file "ForumDB.dump" và tên database mà bạn đã tạo, sau khi hoàn thành nhấn Enter](./images/image-20.png)
 - Bạn cần nhập password 1 lần nữa rồi nhấn Enter
-- ![Nếu màn hình Terminal hiển thị như này, thì chúng ta đã restore thành công](image-21.png)
+- ![Nếu màn hình Terminal hiển thị như này, thì chúng ta đã restore thành công](./images/image-21.png)
 - Mở ứng dụng PgAdmin 4 lên và kiểm tra xem database bạn vừa tạo đã được restore dữ liệu thành công chưa
-- ![Kết quả nếu restore thành công](image-22.png)
+- ![Kết quả nếu restore thành công](./images/image-22.png)
 
 #### Khởi chạy Backend
 - Tại thư mục NodeJS, nhấn mở thư mục server, sau đó mở thư mục postgres, ta sẽ thấy một file tên là: "postgres.js"
-- ![Bên trong file "postgres.js", ta sẽ thấy 1 đoạn code như sau](image-23.png)
+- ![Bên trong file "postgres.js", ta sẽ thấy 1 đoạn code như sau](./images/image-23.png)
 
 const sequelize = new Sequelize("NextForum", "postgres", "123456789binh", {
   host: "localhost",
@@ -196,19 +196,20 @@ const sequelize = new Sequelize("important", "postgres", "matkhauPgAdmin4", {
 
 - Vậy là đã xong bước set up cho cơ sở dữ liệu
 
-- ![Tại màn hình Terminal lúc nãy của Frontend, chúng ta sẽ mở thêm 1 màn hình terminal nữa](image-24.png)
-- ![Nhấn vào dấu + ở góc trên bên phải để mở thêm màn hình terminal](image-25.png)
-- ![Giờ chúng ta đã có 2 màn hình Terminal, 1 cái cho Frontend, 1 cái cho Backend](image-26.png)
-- ![Chạy các câu lệnh sau để cài đặt tài nguyên cho Backend](image-27.png)
-- ![Cài đặt thành công](image-28.png)
+- ![Tại màn hình Terminal lúc nãy của Frontend, chúng ta sẽ mở thêm 1 màn hình terminal nữa](./images/image-24.png)
+- ![Nhấn vào dấu + ở góc trên bên phải để mở thêm màn hình terminal](./images/image-25.png)
+- ![Giờ chúng ta đã có 2 màn hình Terminal, 1 cái cho Frontend, 1 cái cho Backend](./images/image-26.png)
+- ![Chạy các câu lệnh sau để cài đặt tài nguyên cho Backend](./images/image-27.png)
+- ![Cài đặt thành công](./images/image-28.png)
 - Chạy câu lệnh "npm run start" để khởi chạy Backend
-- ![Màn hình hiển thị như này là chúng ta đã thành công](image-29.png)
+- ![Màn hình hiển thị như này là chúng ta đã thành công](./images/image-29.png)
 
 **Chú ý**: Nếu màn hình hiển thị sai khác, vui lòng thực hiện các bước lại từ đầu
 
 - Sau khi khởi chạy Backend thành công, chúng ta có thể truy cập vào đường link của trang web: "http://localhost:3000"
 
 **Chú ý**: Quá trình khởi chạy có thể sẽ tốn thời gian, vui lòng chờ đợi để trang load
-- ![Màn hình hiển thị ra trang chủ của DevShare Lite](image-9.png)
+- ![Màn hình hiển thị ra trang chủ của DevShare Lite](./images/image-9.png)
 
 **Kết quả**: Chúng ta đã mở được trang web và có thể tiến hành các thao tác tại website này !!!!
+**Chú ý**: Trong quá trình thao tác lần đầu, website cần thời gian để compile và load, có thể sẽ mất vài giây cho quá trình đó, vui lòng kiên nhẫn chờ đợi!!
