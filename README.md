@@ -1,7 +1,7 @@
 # DevShare Lite
 ## 📌 Author Information
-👨‍🎓 **Full Name**: Hoàng Văn Bình
-🎓 **School**: School of Information and Communication Technology, Hanoi University of Science and Technology
+👨‍🎓 **Full Name**: Hoàng Văn Bình  
+🎓 **School**: School of Information and Communication Technology, Hanoi University of Science and Technology  
 🆔 **Student ID**: 20235664
 
 ## 🧩 Project Overview
