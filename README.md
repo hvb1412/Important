@@ -3,7 +3,7 @@
 ## 📌 Thông tin tác giả
 👨‍🎓 **Họ tên**: Hoàng Văn Bình  
 🎓 **Trường**: Trường Công nghệ thông tin & Truyền thông, Đại học Bách khoa Hà Nội
-🆔 **MSSV**: 20521234
+🆔 **MSSV**: 20235664
 
 ## 🧩 Tổng quan dự án
 
