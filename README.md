@@ -128,7 +128,7 @@ source_code/backend/
 
 ---
 ## 🛠️ Installation & Project Setup
-### Hướng dẫn cài đặt và khởi chạy dự án
+### How to install and run project
 - Clone the entire repository from: "https://github.com/hvb1412/Important.git"
 - Create a new folder and open Git Bash inside it. ![alt text](./source_code/images/image.png)
 - Run the command below to clone the repo: "git clone https://github.com/hvb1412/Important.git"  ![alt text](./source_code/images/image-1.png)
