@@ -129,7 +129,7 @@ source_code/backend/
 
 ## Hướng dẫn cài đặt và khởi chạy dự án
 - Clone tất cả các thư mục có trên git về máy local: "https://github.com/hvb1412/Important.git"
-- ![Tạo 1 thư mục mới, sau đó mở Git Bash trên thư mục này](./source_code/images/image.png)
+- Tạo 1 thư mục mới, sau đó mở Git Bash trên thư mục này![](./source_code/images/image.png)
 - ![Sử dụng câu lệnh sau để clone tất cả thư mục về máy: "git clone https://github.com/hvb1412/Important.git"](./source_code/images/image-1.png)
 - ![Sau khi clone, ta sẽ thu được thư mục Important chứa các thư mục con như sau](./source_code/images/image-2.png)
 - ![Mở thư mục Important trong VS Code, sau đó bật Terminal của VS Code lên](./source_code/images/image-3.png)
