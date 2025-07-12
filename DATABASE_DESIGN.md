@@ -1,140 +1,153 @@
 # 📊 DATABASE DESIGN – DevShare Lite
 
-## 🧠 Mục tiêu thiết kế
+## 🧠 Design Objectives
 
-Cơ sở dữ liệu của **DevShare Lite** được thiết kế nhằm hỗ trợ một diễn đàn chia sẻ bài viết, thảo luận kỹ thuật, nơi người dùng có thể tạo tài khoản, viết bài, gắn thẻ, bình luận và phân loại nội dung theo chuyên mục. Hệ thống ưu tiên khả năng mở rộng, tối ưu truy vấn và đảm bảo tính toàn vẹn dữ liệu.
-
----
-
-## 🔗 Sơ đồ mối quan hệ (ER Diagram - mô tả text)
-
-![Sơ đồ quan hệ của Database DevShare Lite](./images/Sơ-đồ-ERD-Database.png)
+The **DevShare Lite** database is designed to support a technical discussion and article-sharing forum where users can register accounts, write posts, tag content, leave comments, and categorize posts by topic. The system prioritizes scalability, query optimization, and data integrity.
 
 ---
 
-## 📁 Chi tiết các bảng
+## 🔗 Entity Relationship Diagram (ER Diagram - textual description)
 
-### 1. `users` – Người dùng
-| Tên cột      | Kiểu dữ liệu     | Ràng buộc                     | Mô tả                      |
-|--------------|------------------|-------------------------------|----------------------------|
-| user_id      | SERIAL           | PRIMARY KEY                   | ID người dùng              |
-| user_name    | VARCHAR(100)     | NOT NULL                      | Tên hiển thị người dùng    |
-| email        | VARCHAR(255)     | NOT NULL, UNIQUE              | Email đăng ký              |
-| password     | TEXT             | NOT NULL                      | Mật khẩu đã mã hóa         |
-| role         | VARCHAR(50)      | NOT NULL, DEFAULT 'member'    | Quyền: admin, member.      |
-| created_at   | TIMESTAMP        | DEFAULT CURRENT_TIMESTAMP     | Thời gian tạo tài khoản    |
-| updated_at   | TIMESTAMP        | DEFAULT CURRENT_TIMESTAMP     | Lần cập nhật cuối          |
+**ER Diagram of DevShare Lite Database** ![alt text](./source_code/images/Sơ-đồ-ERD-Database.png)
 
 ---
 
-### 2. `user_profile` – Hồ sơ người dùng
-| Tên cột      | Kiểu dữ liệu     | Ràng buộc                         | Mô tả                   |
-|--------------|------------------|-----------------------------------|-------------------------|
-| user_id      | INT              | PRIMARY KEY, FK → users(user_id)  | ID người dùng           |
-| user_name    | VARCHAR(100)     | NOT NULL                          | Tên hiển thị            |
-| image        | VARCHAR(255)     | NULLABLE                          | Ảnh đại diện            |
-| bio          | TEXT             | NULLABLE                          | Giới thiệu ngắn         |
-| address      | VARCHAR(255)     | NULLABLE                          | Địa chỉ                 |
-| phone_number | VARCHAR(50)      | NULLABLE                          | Số điện thoại           |
-| created_at   | TIMESTAMP        | DEFAULT CURRENT_TIMESTAMP         | Ngày tạo hồ sơ          |
-| updated_at   | TIMESTAMP        | DEFAULT CURRENT_TIMESTAMP         | Ngày cập nhật           |
+## 📁 Table Details
+
+### 1. `users` – Users
+
+| Column Name | Data Type    | Constraints                | Description           |
+| ----------- | ------------ | -------------------------- | --------------------- |
+| user_id    | SERIAL       | PRIMARY KEY                 | User ID               |
+| user_name  | VARCHAR(100) | NOT NULL                    | Display name          |
+| email       | VARCHAR(255) | NOT NULL, UNIQUE           | Registered email      |
+| password    | TEXT         | NOT NULL                   | Encrypted password    |
+| role        | VARCHAR(50)  | NOT NULL, DEFAULT 'member' | Role: admin or member |
+| created_at | TIMESTAMP    | DEFAULT CURRENT_TIMESTAMP   | Account creation time |
+| updated_at | TIMESTAMP    | DEFAULT CURRENT_TIMESTAMP   | Last update time      |
 
 ---
 
-### 3. `categories` – Chuyên mục
-| Tên cột      | Kiểu dữ liệu     | Ràng buộc      | Mô tả                           |
-|--------------|------------------|----------------|---------------------------------|
-| category_id  | SERIAL           | PRIMARY KEY    | ID chuyên mục                   |
-| name         | VARCHAR(100)     |                | Tên chuyên mục                  |
-| description  | TEXT             |                | Mô tả về chuyên mục             |
+### 2. `user_profile` – User Profile
+
+| Column Name   | Data Type    | Constraints                       | Description           |
+| ------------- | ------------ | --------------------------------- | --------------------- |
+| user_id      | INT          | PRIMARY KEY, FK → users(user_id)   | User ID               |
+| user_name    | VARCHAR(100) | NOT NULL                           | Display name          |
+| image         | VARCHAR(255) | NULLABLE                          | Avatar URL            |
+| bio           | TEXT         | NULLABLE                          | Short bio             |
+| address       | VARCHAR(255) | NULLABLE                          | Address               |
+| phone_number | VARCHAR(50)  | NULLABLE                           | Phone number          |
+| created_at   | TIMESTAMP    | DEFAULT CURRENT_TIMESTAMP          | Profile creation date |
+| updated_at   | TIMESTAMP    | DEFAULT CURRENT_TIMESTAMP          | Last update date      |
 
 ---
 
-### 4. `posts` – Bài viết
-| Tên cột      | Kiểu dữ liệu     | Ràng buộc                                        | Mô tả                    |
-|--------------|------------------|--------------------------------------------------|--------------------------|
-| post_id      | SERIAL           | PRIMARY KEY                                      | ID bài viết              |
-| user_id      | INT              | FK → users(user_id), ON DELETE SET NULL          | Tác giả                  |
-| title        | VARCHAR(255)     |                                                  | Tiêu đề bài viết         |
-| content      | TEXT             |                                                  | Nội dung chính           |
-| category_id  | INT              | FK → categories(category_id), ON DELETE SET NULL | Chuyên mục chính         |
-| status       | VARCHAR(50)      | CHECK (status IN ('draft', 'published'))         | Trạng thái               |
-| created_at   | TIMESTAMP        | DEFAULT CURRENT_TIMESTAMP                        | Ngày tạo                 |
-| updated_at   | TIMESTAMP        | DEFAULT CURRENT_TIMESTAMP                        | Ngày cập nhật            |
+### 3. `categories` – Categories
+
+| Column Name  | Data Type    | Constraints | Description                 |
+| ------------ | ------------ | ----------- | --------------------------- |
+| category_id  | SERIAL       | PRIMARY KEY | Category ID                 |
+| name         | VARCHAR(100) |             | Category name               |
+| description  | TEXT         |             | Description of the category |
 
 ---
 
-### 5. `comments` – Bình luận
-| Tên cột      | Kiểu dữ liệu     | Ràng buộc                                      | Mô tả                      |
-|--------------|------------------|------------------------------------------------|----------------------------|
-| comment_id   | SERIAL           | PRIMARY KEY                                    | ID bình luận               |
-| post_id      | INT              | FK → posts(post_id), ON DELETE CASCADE         | Bài viết liên quan         |
-| user_id      | INT              | FK → users(user_id), ON DELETE CASCADE         | Người bình luận            |
-| content      | TEXT             |                                                | Nội dung bình luận         |
-| parent_id    | INT              | FK → comments(comment_id), ON DELETE CASCADE   | ID bình luận cha (nếu có)  |
-| created_at   | TIMESTAMP        | DEFAULT CURRENT_TIMESTAMP                      | Ngày tạo                   |
-| updated_at   | TIMESTAMP        | DEFAULT CURRENT_TIMESTAMP                      | Ngày cập nhật              |
+### 4. `posts` – Posts
+
+| Column Name  | Data Type    | Constraints                                       | Description      |
+| ------------ | ------------ | ------------------------------------------------- | ---------------- |
+| post_id      | SERIAL       | PRIMARY KEY                                       | Post ID          |
+| user_id      | INT          | FK → users(user_id), ON DELETE SET NULL           | Author           |
+| title        | VARCHAR(255) |                                                   | Post title       |
+| content      | TEXT         |                                                   | Post content     |
+| category_id  | INT          | FK → categories(category_id), ON DELETE SET NULL  | Main category    |
+| status       | VARCHAR(50)  | CHECK (status IN ('draft', 'published'))          | Post status      |
+| created_at   | TIMESTAMP    | DEFAULT CURRENT_TIMESTAMP                         | Creation date    |
+| updated_at   | TIMESTAMP    | DEFAULT CURRENT_TIMESTAMP                         | Last update date |
 
 ---
 
-### 6. `post_categories` – Liên kết bài viết và chuyên mục (nhiều - nhiều)
-| Cột          | Kiểu dữ liệu     | Ràng buộc                                     | Mô tả                      |
-|--------------|------------------|-----------------------------------------------|----------------------------|
-| post_id      | INT              | PRIMARY KEY, FK → posts(post_id)              | ID bài viết                |
-| category_id  | INT              | PRIMARY KEY, FK → categories(category_id)     | ID chuyên mục              |
+### 5. `comments` – Comments
 
-> Lưu ý: `posts.category_id` là chuyên mục **chính**, còn bảng này là các chuyên mục **phụ liên quan**.
-
----
-
-### 7. `tags` – Thẻ bài viết
-| Cột         | Kiểu dữ liệu     | Ràng buộc      | Mô tả                      |
-|-------------|------------------|----------------|----------------------------|
-| tag_id      | SERIAL           | PRIMARY KEY    | ID thẻ                     |
-| name        | VARCHAR(100)     |                | Tên thẻ (tag)              |
+| Column Name | Data Type | Constraints                                   | Description                |
+| ----------- | --------- | --------------------------------------------- | -------------------------- |
+| comment_id  | SERIAL    | PRIMARY KEY                                   | Comment ID                 |
+| post_id     | INT       | FK → posts(post_id), ON DELETE CASCADE        | Related post               |
+| user_id     | INT       | FK → users(user_id), ON DELETE CASCADE        | Comment author             |
+| content     | TEXT      |                                               | Comment content            |
+| parent_id   | INT       | FK → comments(comment_id), ON DELETE CASCADE  | Parent comment ID (if any) |
+| created_at  | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP                     | Creation time              |
+| updated_at  | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP                     | Last update                |
 
 ---
 
-### 8. `post_tags` – Gắn thẻ cho bài viết (nhiều - nhiều)
-| Cột         | Kiểu dữ liệu     | Ràng buộc                                 | Mô tả                |
-|-------------|------------------|-------------------------------------------|----------------------|
-| post_id     | INT              | PRIMARY KEY, FK → posts(post_id)          | ID bài viết          |
-| tag_id      | INT              | PRIMARY KEY, FK → tags(tag_id)            | ID thẻ               |
+### 6. `post_categories` – Post-Category Mapping (Many-to-Many)
+
+| Column Name  | Data Type | Constraints                                | Description |
+| ------------ | --------- | ------------------------------------------ | ----------- |
+| post_id      | INT       | PRIMARY KEY, FK → posts(post_id)           | Post ID     |
+| category_id  | INT       | PRIMARY KEY, FK → categories(category_id)  | Category ID |
+
+*> Note*: `posts.category_id` is the **main** category; this table represents **additional related categories**.
 
 ---
 
-## ✅ Các ràng buộc quan trọng
+### 7. `tags` – Tags
 
-- **ON DELETE CASCADE**: được sử dụng với bình luận, bài viết, user_profile, để đảm bảo dữ liệu phụ thuộc bị xóa theo.
-- **ON DELETE SET NULL**: với bài viết khi user hoặc category bị xóa, tránh mất dữ liệu chính.
-
----
-
-## 🔄 Mối quan hệ giữa các bảng (1-1, 1-N, N-N)
-
-users           1 ────── 1 user_profile
-users           1 ──────< posts
-users           1 ──────< comments
-posts           1 ──────< comments
-comments        1 ──────< comments (self-reference)
-posts           N ──────< post_categories >────── N categories
-posts           N ──────< post_tags >────── N tags
+| Column Name | Data Type    | Constraints | Description |
+| ----------- | ------------ | ----------- | ----------- |
+| tag_id      | SERIAL       | PRIMARY KEY | Tag ID      |
+| name        | VARCHAR(100) |             | Tag name    |
 
 ---
 
-## 🚀 Dự định cải tiến trong tương lai
+### 8. `post_tags` – Post-Tag Mapping (Many-to-Many)
 
-- Thêm bảng `likes` để người dùng thích bài viết hoặc bình luận.
-- Thêm bảng `notifications` để theo dõi tương tác.
-- Thêm trường `slug` trong `posts` để tạo URL thân thiện.
+| Column Name | Data Type | Constraints                       | Description |
+| ----------- | --------- | --------------------------------- | ----------- |
+| post_id     | INT       | PRIMARY KEY, FK → posts(post_id)  | Post ID     |
+| tag_id      | INT       | PRIMARY KEY, FK → tags(tag_id)    | Tag ID      |
 
 ---
 
-## 🧩 Lý do lựa chọn cơ sở dữ liệu quan hệ (PostgreSQL)
-### DevShare Lite được triển khai trên hệ quản trị cơ sở dữ liệu quan hệ PostgreSQL, vì các lý do:
+## ✅ Key Constraints
 
-- Dữ liệu có cấu trúc rõ ràng: Các thực thể như người dùng, bài viết, chuyên mục… có quan hệ ràng buộc rõ ràng, phù hợp mô hình quan hệ.
-- Hỗ trợ mạnh mẽ về ràng buộc toàn vẹn (constraints): như FOREIGN KEY, ON DELETE CASCADE, giúp đảm bảo tính toàn vẹn dữ liệu.
-- Khả năng mở rộng và hiệu suất tốt: PostgreSQL hỗ trợ index, query optimizer mạnh, phù hợp với các ứng dụng vừa và lớn.
-- Cần giao dịch (ACID): Tính nhất quán dữ liệu là ưu tiên trong hệ thống có tương tác như bình luận, thích, cập nhật bài viết.
+* **ON DELETE CASCADE**: Used for comments, posts, and user profiles to ensure dependent data is also deleted.
+* **ON DELETE SET NULL**: Used in posts when a user or category is deleted, to prevent loss of main content.
+
+---
+
+## 🔄 Table Relationships (1-1, 1-N, N-N)
+
+```
+users           1 ────── 1 user_profile  
+users           1 ──────< posts  
+users           1 ──────< comments  
+posts           1 ──────< comments  
+comments        1 ──────< comments (self-reference)  
+posts           N ──────< post_categories >────── N categories  
+posts           N ──────< post_tags >────── N tags  
+```
+
+---
+
+## 🚀 Future Enhancements
+
+* Add a `likes` table to track user likes on posts and comments.
+* Add a `notifications` table to manage user interactions.
+* Add a `slug` field in `posts` for SEO-friendly URLs.
+
+---
+
+## 🧩 Why Use a Relational Database (PostgreSQL)?
+
+DevShare Lite is built on the PostgreSQL relational database system for the following reasons:
+
+* **Structured data**: Entities like users, posts, and categories have clearly defined relationships, making a relational model ideal.
+* **Strong constraint support**: PostgreSQL supports robust features like foreign keys and cascading actions for data integrity.
+* **Scalability and performance**: Indexing and a powerful query planner allow for efficient performance on medium to large-scale apps.
+* **Transactional support (ACID)**: Data consistency is crucial in systems with user interaction, such as comments, likes, and content updates.
+
+---
 

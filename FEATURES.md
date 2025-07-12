@@ -1,108 +1,98 @@
-# 🚀 Các chức năng của dự án DevShare Lite
+# 🚀 Features of the DevShare Lite Project
 
-## Chức năng đăng nhập
-![Người dùng có thể đăng nhập nếu đã có tài khoản](./screenshots/login.png)
+## Login Feature
+Users can log in if they already have an account ![alt text](./screenshots/login.png)
 
-## Chức năng đăng ký
-![Nếu chưa có tài khoản, người dùng có thể đăng ký](./screenshots/signup.png)
+## Sign-Up Feature
+If users don’t have an account, they can register ![alt text](./screenshots/signup.png)
 
-## Chức năng đăng xuất
-![Người dùng có thể đăng xuất khi nhấn nút "Logout"](./screenshots/logout.png)
-**Kết quả**: ![Kết quả khi Logout](./screenshots/logout_result.png)
+## Logout Feature
+Users can log out by clicking the "Logout" button ![alt text](./screenshots/logout.png)
+**Result**: ![](./screenshots/logout_result.png)
 
-## Trở về trang chủ (HomePage)
-![Trở về trang chủ khi nhấn vào nút "Trang chủ"](./screenshots/home_page.png)
+## Return to Homepage
+Return to the homepage by clicking the "Home" button ![alt text](./screenshots/home_page.png)
 
-## Đi đến diễn đàn chứa tất cả các bài đăng (AllPosts)
-![Nhấn vào nút "Diễn đàn" sẽ đưa người dùng đến trang chứa tất cả bài đăng](./screenshots/all-posts.png)
-**Chú ý**: ![Có thể chuyển đến trang chuyên mục của bài viết bằng cách nhấn vào phần chuyên mục ở dưới tiêu đều, ví dụ: "#Khác"](./screenshots/route_category.png)
+## Navigate to the Forum with All Posts (AllPosts)
+Clicking the "Forum" button takes users to the page that shows all posts ![alt text](./screenshots/all-posts.png)
+**Note**: You can navigate to a post's category page by clicking the category label below the title, e.g., "#Other" ![alt text](./screenshots/route_category.png)
 
-## Đăng bài viết (post)
-![Vào trang đăng bài viết khi nhấn nút "Đăng bài", "Vào trang đăng bài", "Bắt đầu đăng bài"](./screenshots/post.png)
+## Create a Post
+Access the post creation page by clicking "Create Post", "Go to Post Page", or "Start Posting" ![alt text](./screenshots/post.png)
 
-## Nhảy đến trang bài viết đã đăng hoặc lưu nháp
-![Tự động nhảy trang khi nhấn nút "Đăng bài" hoặc "Lưu nháp" kèm với thông báo nổi trên màn hình](./screenshots/post_published_drafted.png)
+## Redirect to Published or Draft Post Page
+Automatically redirect to the corresponding post page after clicking "Publish" or "Save Draft", along with a toast notification ![alt text](./screenshots/post_published_drafted.png)
 
-## Bình luận
-![Bình luận vào bài viết](./screenshots/comment.png)
-**Kết quả**: ![Kết quả](./screenshots/comment_result.png)
+## Commenting
+Comment on a post ![alt text](./screenshots/comment.png)
+**Result**: ![alt text](./screenshots/comment_result.png)
 
-## Trả lời bình luận
-![Nhấn nút "Trả lời" để trả lời bình luận](./screenshots/comment_response.png)
-**Kết quả**: ![Kết quả khi trả lời bình luận](./screenshots/comment_response_result.png)
+## Reply to Comment
+Click the "Reply" button to respond to a comment ![alt text](./screenshots/comment_response.png)
+**Result**: ![alt text](./screenshots/comment_response_result.png)
 
-## Chuyển đến trang của chuyên mục cụ thể
-![Lựa chọn chuyên mục ở trang chủ, hoặc nhấn vào nút "Chuyên mục", sau đó lựa chọn chuyên mục muốn xem](./screenshots/category.png)
-**Kết quả**: ![Chuyên mục cụ thể kèm theo các bài viết](./screenshots/category_posts.png)
+## Navigate to Specific Category Page
+Choose a category on the homepage, or click the "Category" button and select the category you want to view ![alt text](./screenshots/category.png)
+**Result**: ![alt text](./screenshots/category_posts.png)
 
-## Thành viên của diễn đàn
-![Hiển thị danh sách thành viên diễn đàn khi nhấn vào nút "Thành viên"](./screenshots/members.png)
+## Forum Members
+Display the list of forum members by clicking the "Members" button ![alt text](./screenshots/members.png)
 
-## Tìm kiếm bài viết
-![Tìm kiếm bằng cách nhập nội dung vào thanh tìm kiếm rồi Enter](./screenshots/search.png)
-**Kết quả**: ![Kết quả](./screenshots/search_result.png)
+## Search Posts
+Search by entering content into the search bar and pressing Enter ![alt text](./screenshots/search.png)
+**Result**: Result ![alt text](./screenshots/search_result.png)
 
-## Hiển thị hồ sơ người dùng
-![Nhấn nút "Hồ sơ" để xem hồ sơ người dùng](./screenshots/profile.png)
-**Kết quả**: ![Xem hồ sơ người dùng](./screenshots/profile_view.png)
+## View User Profile
+Click the "Profile" button to view the user profile ![alt text](./screenshots/profile.png)
+**Result**: ![alt text](./screenshots/profile_view.png)
 
-## Xem các bài đã đăng và bài nháp của người dùng
-![Nhấn nút "Posts"](./screenshots/user_posts.png)
+## View User's Published and Draft Posts
+Click the "Posts" button ![alt text](./screenshots/user_posts.png)
 
-## Chỉnh sửa thông tin người dùng
-![Nhấn nút "Sửa thông tin" ở phần About](./screenshots/profile_update.png)
-*Trong ảnh*: Người dùng đang có tên là Đỗ Hoàng Nam và About me: Không có mô tả nào
-![Chỉnh sửa thông tin](./screenshots/profile_update_info.png)
-**Kết quả**: ![Đã đổi thông tin](./screenshots/profile_update_info_result.png)
-
-Dưới đây là phần **mở rộng hoàn chỉnh** để bạn chèn **vào cuối file `FEATURES.md`** — giữ nguyên định dạng Markdown để đồng bộ với phần trước:
-
----
-
-### 🚀 **Chức năng nâng cao đã thực hiện**
-
-* Trang hiển thị **danh sách thành viên** diễn đàn.
-* Cho phép **chỉnh sửa thông tin hồ sơ người dùng** (tên, địa chỉ, giới thiệu).
-* Phân chia rõ bài viết thành 2 loại: **đã đăng** và **đang lưu nháp**.
-* Tự động **chuyển hướng** sau khi đăng bài hoặc lưu nháp, kèm theo **thông báo nổi**.
-* Hệ thống **phân trang** bài viết.
-* Có thể **truy cập bài viết qua chuyên mục**
-* Tự động **cập nhật các bài viết nổi bật ở trang chủ**
+## Edit User Information
+Click the "Edit Info" button in the About section ![alt text](./screenshots/profile_update.png)
+*In the image*: The user is named Đỗ Hoàng Nam and the About me section says: No description
+Edit user information
+Update info: ![alt text](./screenshots/profile_update_info.png)
+**Result**:Info updated ![alt text](./screenshots/profile_update_info_result.png)
 
 ---
 
-### 🛠️ Các vấn đề gặp phải & Giải pháp
-*Vấn đề*: Chuyển hướng không đúng sau khi người dùng đăng/lưu bài
-*Giải pháp*: Sử dụng useNavigate() từ React Router để điều hướng chính xác sau khi hoàn thành thao tác, đồng thời cập nhật trạng thái UI để phản ánh thay đổi.
+## 🚀 Advanced Features Implemented
+* Page displaying **the list of forum members**.
+* Ability to **edit user profile information (name, address, bio)**.
+* Clear distinction between **published posts** and **drafts**.
+* Automatic **redirection** after publishing or saving a post, with **toast notifications**.
+* **Pagination system** for posts.
+* Ability to **access posts by category**.
+* **Featured posts auto-update** on the homepage.
 
-*Vấn đề*: Bình luận không hiển thị ngay sau khi người dùng gửi
-*Giải pháp*: Thêm logic re-fetch lại dữ liệu bình luận sau khi gửi thành công. Sử dụng useEffect hoặc cập nhật state để trigger render lại danh sách bình luận.
+## 🛠️ Issues & Solutions
+**Issue**: Incorrect redirection after publishing/saving a post
+*Solution*: Used useNavigate() from React Router for proper navigation after each action, and updated the UI state to reflect changes.
 
-*Vấn đề*: Thông tin hồ sơ không được cập nhật sau khi chỉnh sửa
-*Giải pháp*: Sau khi gọi API cập nhật thành công, tiến hành cập nhật lại local state hoặc gọi lại API để lấy dữ liệu mới nhất và hiển thị lại trên UI.
+**Issue**: Comments not appearing immediately after submission
+*Solution*: Added logic to re-fetch comment data after successful submission. Used useEffect or state updates to trigger a re-render of the comment list.
 
-*Vấn đề*: Tìm kiếm bài viết trả về kết quả chưa chính xác (do còn chứa Markdown hoặc không khớp từ khóa)
-*Giải pháp*: Cải tiến thuật toán tìm kiếm bằng cách loại bỏ định dạng Markdown, chuyển toàn bộ nội dung và từ khóa về dạng lowercase, và tìm khớp cả ở tiêu đề lẫn nội dung bài viết.
+**Issue**: Profile information not updating after editing
+*Solution*: After a successful API update, refreshed the local state or re-fetched user data to display the latest info in the UI.
 
----
+**Issue**: Search results were inaccurate (due to Markdown formatting or keyword mismatch)
+*Solution*: Improved the search algorithm by stripping Markdown formatting, converting content and keywords to lowercase, and matching both title and body content.
 
-### ⚠️ **Giới hạn hiện tại của sản phẩm**
+## ⚠️ Current Limitations
+* **No like/vote system** for posts and comments yet.
+* **No notification system** for replies or new comments.
+* **Single-level comment** replies only (no nested threading).
+* **No admin** panel for post moderation.
+* Users cannot **embed images** or **use advanced formatting** in posts.
 
-* Chưa có hệ thống **like/vote** cho bài viết và bình luận.
-* Chưa có **thông báo (notification)** khi có người bình luận hoặc trả lời.
-* Phản hồi bình luận **chỉ 1 cấp** (không hỗ trợ phản hồi lồng nhiều cấp).
-* Chưa có **quản trị viên (admin)** để kiểm duyệt bài viết.
-* Người dùng không thể **gắn ảnh/định dạng nâng cao** trong bài viết.
-
----
-
-### 🌱 **Định hướng phát triển tương lai**
-
-* Thêm hệ thống **thích (Like)/không thích (Dislike)** bài viết và bình luận.
-* Tích hợp **Markdown Preview**, hỗ trợ **chèn ảnh** và **định dạng nâng cao**.
-* Xây dựng hệ thống **thông báo** khi có tương tác (ai đó bình luận bài viết của mình…).
-* Bổ sung trang **quản trị admin** để duyệt bài viết, chặn người dùng vi phạm.
-* Tăng cường **phân quyền**: phân biệt rõ `admin`, `mod`, `người dùng thường`.
-* **Cải thiện giao diện mobile** và tăng khả năng truy cập (accessibility).
+## 🌱 Future Development Plans
+* Add **a like/dislike system** for posts and comments.
+* **Integrate Markdown preview**, with support for **image embedding** and **rich formatting**.
+* Build **a notification system** for user interactions (e.g., someone comments on your post).
+* Add **an admin dashboard** for approving posts and managing user violations.
+* Improve **role-based access control**: clearly separate admin, moderator, and regular user.
+* **Enhance mobile UI** and improve accessibility.
 
 ---
