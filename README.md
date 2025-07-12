@@ -1,112 +1,111 @@
 # DevShare Lite
+## 📌 Author Information
+👨‍🎓 **Full Name**: Hoàng Văn Bình
+🎓 **School**: School of Information and Communication Technology, Hanoi University of Science and Technology
+🆔 **Student ID**: 20235664
 
-## 📌 Thông tin tác giả
-👨‍🎓 **Họ tên**: Hoàng Văn Bình  
-🎓 **Trường**: Trường Công nghệ thông tin & Truyền thông, Đại học Bách khoa Hà Nội
-🆔 **MSSV**: 20235664
+## 🧩 Project Overview
+DevShare Lite is an online forum where users can post articles to share knowledge, learning materials, and real-world experiences during their studies or work. Users can also ask technical questions and engage in discussions through comments and replies.
+This project simulates a small developer community where users can:
+- Post content related to programming, technology, personal projects, news, study tips, or learning experiences;
+- Tag and categorize posts for easy discovery and management;
+- Read and comment on others’ posts, fostering academic interaction and discussion;
+- Browse lists of trending, latest, or topic-specific posts.
 
-## 🧩 Tổng quan dự án
+The forum features a user-friendly and modern interface, tailored to younger users and optimized for easy navigation. User data is stored locally (via localStorage) after login, allowing a personalized experience without requiring complex registration steps.
 
-**DevShare Lite**  là một diễn đàn trực tuyến nơi người dùng có thể đăng tải các bài viết chia sẻ kiến thức, tài liệu học tập, kinh nghiệm thực tiễn trong quá trình học tập và làm việc cũng như đặt câu hỏi về các vấn đề kỹ thuật, tham gia trả lời, bình luận.
-Dự án mô phỏng mô hình một cộng đồng lập trình nhỏ, nơi người dùng có thể dễ dàng:
-- Đăng tải các bài viết liên quan đến lập trình, công nghệ, dự án cá nhân, tin tức, bài học hoặc mẹo học tập hiệu quả;
-- Gắn thẻ (tag) và phân loại bài viết theo chuyên mục (category) để dễ dàng tìm kiếm và quản lý;
-- Đọc và để lại bình luận trên bài viết của người khác, tạo ra sự tương tác và thảo luận học thuật giữa các thành viên;
-- Xem danh sách các bài viết phổ biến, mới nhất, hoặc lọc theo chủ đề quan tâm.
+Project Goal: To create an active learning environment that encourages IT students to share and learn from each other. It also helps them develop essential skills like article writing and clear knowledge presentation — both crucial for professional work settings.
 
-Diễn đàn được xây dựng với giao diện thân thiện, hiện đại, phù hợp với người dùng trẻ và dễ dàng thao tác, sử dụng trên. Ngoài ra, hệ thống cũng lưu trữ thông tin người dùng sau khi đăng nhập (bằng localStorage), giúp tạo trải nghiệm cá nhân hóa mà không cần đăng ký phức tạp.
+## Main Features:
+- User registration, login, and session storage using localStorage
+- User profile view and edit
+- View forum member list
+- Create posts with tags and category classifications
+- Browse posts by category or tag
+- View featured and recent posts
+- Search for posts by title or content
+- Comment and reply under posts
+- Responsive and modern UI, easy to use
 
-Mục tiêu của dự án là tạo ra một môi trường học tập năng động, giúp sinh viên ngành IT dễ dàng chia sẻ, học hỏi lẫn nhau và từng bước hình thành thói quen viết bài, trình bày kiến thức rõ ràng — những kỹ năng thiết yếu trong môi trường làm việc chuyên nghiệp sau này.
-
-
-**Các chức năng chính:**
-- Đăng ký tài khoản, đăng nhập và lưu thông tin người dùng bằng localStorage
-- Xem hồ sơ, chỉnh sửa thông tin người dùng
-- Hiển thị danh sách các thành viên của diễn đàn
-- Tạo bài viết được gắn thẻ (tag) và phân loại theo từng chuyên mục (category) cụ thể 
-- Hiển thị danh sách bài viết theo chuyên mục, tag
-- Hiển thị các bài viết nổi bật gần đây
-- Tìm kiếm bài viết theo tiêu đề, nội dung
-- Chức năng bình luận và trả lời bình luận dưới mỗi bài viết
-- Giao diện responsive, hiện đại, dễ dàng thao tác
-
-## ⚙️ Công nghệ sử dụng
+## ⚙️ Technologies Used
 ### 🔷 Frontend
-**Next.js**: Framework dựa trên React hỗ trợ server-side rendering (SSR), routing động và tối ưu SEO.
-  👉 *Lý do chọn:* Giúp tăng tốc độ tải trang, tối ưu hiển thị trên công cụ tìm kiếm, và rất phù hợp với ứng dụng nội dung như diễn đàn.
-**Tailwind CSS**: Framework CSS utility-first cho phép xây dựng giao diện nhanh, linh hoạt và dễ tùy chỉnh.
-  👉 *Lý do chọn:* Tăng tốc độ phát triển UI, dễ tái sử dụng và kiểm soát giao diện chính xác đến từng chi tiết.
-**Shadcn UI**: Bộ giao diện UI hiện đại, sử dụng các thành phần React tích hợp sẵn với Tailwind.
-  👉 *Lý do chọn:* Giao diện đẹp mắt, dễ tuỳ biến, giúp tiết kiệm thời gian làm phần frontend.
-**React Markdown + remark-gfm**: Hỗ trợ hiển thị nội dung bài viết ở dạng Markdown giống GitHub, hỗ trợ cả bảng, danh sách, gạch đầu dòng.
-  👉 *Lý do chọn:* Giúp người dùng viết bài dễ dàng với định dạng quen thuộc và trực quan.
-**SCSS**: Tiền xử lý CSS hỗ trợ nesting và biến, giúp viết CSS gọn gàng hơn trong một số phần giao diện đặc biệt.
-  👉 *Lý do chọn:* Dễ tổ chức code và tăng khả năng mở rộng giao diện về sau.
+**Next.js**: React-based framework with server-side rendering (SSR), dynamic routing, and SEO optimization.
+👉 *Why?* Improves page load speed, SEO-friendly, ideal for content-heavy apps like forums.
 
----
+**Tailwind CSS**: Utility-first CSS framework for fast, flexible UI development.
+👉 *Why?* Speeds up UI building, promotes reusability, and gives precise design control.
+
+**Shadcn UI**: Modern UI component library with React components integrated with Tailwind.
+👉 *Why?* Beautiful and customizable components, reduces frontend development time.
+
+**React Markdown + remark-gfm**: Markdown rendering similar to GitHub, supporting tables, lists, checkboxes.
+👉 *Why?* Enables intuitive writing using familiar markdown syntax.
+
+**SCSS**: CSS preprocessor that supports nesting and variables for cleaner styles.
+👉 *Why?* Improves code organization and makes UI scaling easier.
 
 ### 🔶 Backend
-**Node.js & Express**: Nền tảng xây dựng server-side logic và API RESTful.
-  👉 *Lý do chọn:* Cấu trúc rõ ràng, dễ phát triển theo mô hình MVC, có cộng đồng hỗ trợ mạnh mẽ.
-**PostgreSQL**: Cơ sở dữ liệu quan hệ mạnh, hỗ trợ tốt cho các bảng liên kết như `users`, `posts`, `comments`, `tags`...
-  👉 *Lý do chọn:* Dữ liệu của diễn đàn có quan hệ chặt chẽ, PostgreSQL cho phép xây dựng lược đồ rõ ràng và tối ưu truy vấn.
-**Sequelize (ORM)**: Thư viện ORM giúp ánh xạ các bảng thành model trong JavaScript.
-  👉 *Lý do chọn:* Giảm việc viết SQL thủ công, dễ quản lý quan hệ giữa các bảng, và tích hợp tốt với PostgreSQL.
-**pg (node-postgres)**: Thư viện lõi để giao tiếp giữa Node.js và PostgreSQL.
-  👉 *Lý do chọn:* Được Sequelize sử dụng bên dưới, đảm bảo hiệu suất và tính ổn định.
+**Node.js & Express**: Platform for building server-side logic and RESTful APIs.
+👉 *Why?* Clear structure, MVC-ready, strong community support.
 
----
+**PostgreSQL**: Powerful relational database, suitable for related tables like users, posts, comments, etc.
+👉 *Why?* Data has strong relations; PostgreSQL offers clear schema and efficient querying.
 
-### 🛠️ Các công cụ hỗ trợ khác
-**CORS**: Cho phép frontend gọi API backend từ các domain khác nhau trong môi trường phát triển.
-  👉 *Lý do chọn:* Cần thiết để kết nối frontend (Next.js) và backend (Express) chạy ở hai cổng khác nhau.
-**Nodemon**: Tự động restart server khi có thay đổi mã nguồn.
-  👉 *Lý do chọn:* Giúp quá trình lập trình backend nhanh và tiện lợi hơn.
+**Sequelize (ORM)**: ORM library to map tables into JavaScript models.
+👉 *Why?* Reduces manual SQL, easier table relationship management, integrates well with PostgreSQL.
 
+**pg (node-postgres)**: Core library to connect Node.js with PostgreSQL.
+👉 *Why?* Powers Sequelize internally, ensuring performance and stability.
 
-## 🗂️ Cấu trúc thư mục dự án
+### 🛠️ Other Supporting Tools
+**CORS**: Enables frontend to call backend APIs across different domains in development.
+👉 *Why?* Required to link frontend (Next.js) and backend (Express) on different ports.
+
+**Nodemon**: Automatically restarts the server on code changes.
+👉 *Why?* Speeds up backend development.
+
+## 🗂️ Project Folder Structure
 ### Frontend: NextJS/forum
 src/
 ├── app/
-│   ├── (auth)/                    # Xử lý xác thực (login, register)
-│   │   ├── components/            # Các button, header đơn giản cho auth
-│   │   ├── login/                 # Giao diện và logic đăng nhập
-│   │   └── register/              # Giao diện và logic đăng ký
-│   ├── all-posts/                 # Danh sách toàn bộ bài viết
-│   ├── category/[id]/             # Bài viết theo chuyên mục
-│   ├── members/                   # Trang danh sách thành viên
-│   ├── post/                      # Chi tiết bài viết
-│   │   ├── [id]/                  # Trang chi tiết từng bài viết
-│   │   ├── components/            # Thành phần bài viết như: form bài viết, form bình luận, danh sách bình luận, thông tin tác giả
-│   │   └── hooks/                 # Custom hook dùng cho bài viết
-│   ├── search/                    # Tìm kiếm bài viết
-│   ├── user_profile/             # Hồ sơ người dùng, bài viết cá nhân
-│   ├── layout.tsx                # Layout mặc định
-│   ├── page.tsx                  # Trang chính (homepage)
-│   └── globals.css               # CSS toàn cục
-│
-├── components/                   # Các component tái sử dụng: Header, SearchBar, theme
-│   └── ui/                       # Giao diện: button, form, input, label, dialog....
-│
-├── lib/                          # Hàm tiện ích, config chung
-│
-├── config.ts                     # Cấu hình hệ thống
-├── utils.ts                      # Hàm tiện ích tổng hợp
-├── next.config.ts                # Cấu hình dự án Next.js
-├── package-lock.json             # Khóa version các gói phụ thuộc
-├── package.json                  # Danh sách dependencies & script
-└── README.md                     # Tài liệu mô tả frontend
+│   ├── (auth)/                    # Handles login, registration
+│   │   ├── components/            # Simple buttons, headers for auth
+│   │   ├── login/                 # Login UI and logic
+│   │   └── register/              # Registration UI and logic
+│   ├── all-posts/                 # All post list
+│   ├── category/[id]/             # Posts by category
+│   ├── members/                   # Member list page
+│   ├── post/
+│   │   ├── [id]/                  # Post detail page
+│   │   ├── components/            # Post components: post form, comments, author info, etc.
+│   │   └── hooks/                 # Custom hooks for posts
+│   ├── search/                    # Post search page
+│   ├── user_profile/             # User profile and personal posts
+│   ├── layout.tsx                # Default layout
+│   ├── page.tsx                  # Homepage
+│   └── globals.css               # Global CSS
+
+├── components/                   # Reusable components: Header, SearchBar, theme
+│   └── ui/                       # UI components: button, form, input, label, dialog...
+
+├── lib/                          # Utility functions, shared config
+├── config.ts                     # Global configuration
+├── utils.ts                      # General utilities
+├── next.config.ts                # Next.js configuration
+├── package-lock.json             # Dependency lock file
+├── package.json                  # Project dependencies & scripts
+└── README.md                     # Frontend documentation
 
 ### Backend: NodeJS/server
 source_code/backend/
-├── controller/             # Chứa các controller xử lý logic cho từng phần (user, post, comment, ...)
+├── controller/                   # Logic handlers for each module (user, post, comment...)
 │   ├── categoryController.js
 │   ├── commentController.js
 │   ├── postController.js
 │   ├── tagController.js
 │   └── userController.js
-│
-├── model/                  # Định nghĩa các schema của database (dùng với Mongoose hoặc ORM khác)
+
+├── model/                        # Database schemas (for Mongoose or other ORM)
 │   ├── categorySchema.js
 │   ├── commentSchema.js
 │   ├── postCategorySchema.js
@@ -115,102 +114,105 @@ source_code/backend/
 │   ├── tagSchema.js
 │   ├── userProfileSchema.js
 │   └── userSchema.js
-│
-├── postgres/               # Kết nối và xử lý liên quan đến cơ sở dữ liệu PostgreSQL
+
+├── postgres/                     # PostgreSQL connection and handling
 │   └── postgres.js
-│
-├── view/                   # Định nghĩa các route cho API backend
+
+├── view/                         # Backend API routes
 │   └── routes.js
-│
-├── index.js                # Entry point chính khởi chạy server
-├── package.json            # Danh sách dependencies và script cho backend
-├── package-lock.json       # Khóa version các gói phụ thuộc
-└── node_modules/           # Thư viện cài qua npm
 
-## Hướng dẫn cài đặt và khởi chạy dự án
-- Clone tất cả các thư mục có trên git về máy local: "https://github.com/hvb1412/Important.git"
-- Tạo 1 thư mục mới, sau đó mở Git Bash trên thư mục này![alt text](./source_code/images/image.png)
-- Sử dụng câu lệnh sau để clone tất cả thư mục về máy: "git clone https://github.com/hvb1412/Important.git"  ![alt text](./source_code/images/image-1.png)
-- Sau khi clone, ta sẽ thu được thư mục Important chứa các thư mục con như sau![alt text](./source_code/images/image-2.png)
-- Mở thư mục Important trong VS Code, sau đó bật Terminal của VS Code lên![alt text](./source_code/images/image-3.png)
-- Terminal đã được bật![alt text](./source_code/images/image-4.png)
+├── index.js                      # Main server entry point
+├── package.json                  # Backend dependencies & scripts
+├── package-lock.json             # Dependency lock file
+└── node_modules/                 # Installed packages
 
-**Chú ý**: Nếu máy local chưa có NodeJS thì cần phải download NodeJS về máy và cài đặt NodeJS
+---
+## 🛠️ Installation & Project Setup
+### Hướng dẫn cài đặt và khởi chạy dự án
+- Clone the entire repository from: "https://github.com/hvb1412/Important.git"
+- Create a new folder and open Git Bash inside it. ![alt text](./source_code/images/image.png)
+- Run the command below to clone the repo: "git clone https://github.com/hvb1412/Important.git"  ![alt text](./source_code/images/image-1.png)
+- After that, we will have the folder: ![alt text](./source_code/images/image-2.png)
+- Open the Important folder in VS Code, then open the terminal. ![alt text](./source_code/images/image-3.png)
+- Terminal: ![alt text](./source_code/images/image-4.png)
 
-### Cài đặt Frontend
-- Chạy các câu lệnh như trong ảnh để tiến hành cài đặt những tài nguyên cần thiết![alt text](./source_code/images/image-5.png)
-- Màn hình Terminal hiện thông báo như sau là đã kết thúc quá trình cài đặt tài nguyên![alt text](./source_code/images/image-6.png)
-- Chạy câu lệnh: "npm run dev" để khởi chạy Frontend![alt text](./source_code/images/image-7.png)
-- Màn hình Terminal hiển thị như hình bên là đã khởi chạy thành công, đường link Local hiện trên màn hình Terminal: "http://localhost:3000" là đường link dùng để truy cập trang web DevShare Lite![alt text](./source_code/images/image-8.png)
+**Note**: Make sure NodeJS is installed on your local machine.
 
-**Chú ý**: Trước khi truy cập vào trang web, chúng ta cần cài đặt Backend
+### Frontend Setup
+- Run the install commands shown in the image to install dependencies. ![alt text](./source_code/images/image-5.png)
+- Installed successfully ![alt text](./source_code/images/image-6.png)
+- Once dependencies are installed, run: "npm run dev" ![alt text](./source_code/images/image-7.png)
+- The local link "http://localhost:3000" will be displayed in the terminal — this is the DevShare Lite website. ![alt text](./source_code/images/image-8.png)
 
-### Cài đặt Backend
+**Important**: Set up the backend before visiting the site.
+
+### Backend Setup
 #### Restore Database
-- Trong thư mục con backend nằm trong thư mục cha là source_code được git clone về, chúng ta sẽ thấy 1 file database.dump tên: "ForumDB.dump"![alt text](./source_code/images/image-10.png)
-- Copy file ForumDB.dump ra bên ngoài 1 ổ đĩa nào đấy, ví dụ: ổ C, ổ D, ổ E... tùy thuộc vào máy tính local của người dùng
-- Đây là ví dụ về việc copy file "ForumDB.dump" ra ổ đĩa D![alt text](./source_code/images/image-11.png)
-- Tiếp theo, chúng ta sẽ dùng Terminal của Window để restore database về PgAdmin4
+- In the source_code/backend folder, you will find a "ForumDB.dump" file. ![alt text](./source_code/images/image-10.png)
+- Copy ForumDB.dump to a root directory (e.g., C:\, D:\ ).
+- For example: ![alt text](./source_code/images/image-11.png)
+- Next, we use Window Terminal to restore database into PgAdmin 4
 
-**Chú ý**: Cần phải cài đặt PostgreSQL trước khi tiến hành restore
+**Note**: PostgreSQL must be installed beforehand.
 
-- Nếu người dùng đã cài đặt PostgreSQL, thì hãy làm theo các bước sau:
-- Mở thư mục đã cài đặt PostgreSQL![alt text](./source_code/images/image-12.png)
-- Bên trong thư mục này, chúng ta sẽ thấy 1 thư mục con, có tên là "bin"
-- Mở thư mục "bin" này lên![alt text](./source_code/images/image-13.png)
-- Sau đó, tại thanh tìm kiếm trên cùng, gõ dòng chữ "cmd" để có thể mở Terminal của Window dẫn trực tiếp đến thư mục bin của PostgreSQL![alt text](./source_code/images/image-14.png)
-- Kết quả Terminal nếu mở thành công sẽ như sau![alt text](./source_code/images/image-15.png)
-- Chúng ta cần tạo 1 database rỗng trong PostgreSQL trước khi restore dữ liệu của file "ForumDB.dmp" về máy
-- Nhập câu lệnh: "psql postgres postgres" vào Terminal rồi Enter, nó sẽ yêu cầu nhập Password. Password này chính là password chúng ta đã tạo khi cài đặt PostgreSQL về máy
+- If PostgreSQL has installed, follow next steps:
+- Open the folder where PostgreSQL has been installed ![alt text](./source_code/images/image-12.png)
+- Inside, we will see a folder named "bin"
+- Open folder "bin" ![alt text](./source_code/images/image-13.png)
+- In the search bar, write "cmd" and enter ![alt text](./source_code/images/image-14.png)
+- Result: ![alt text](./source_code/images/image-15.png)
+- We need create a empty database before restoring datas from "ForumDB.dmp" file.
+- Run the command: "psql postgres postgres" . Enter your PostgreSQL password when prompted.
 
-**Chú ý**: Trong quá trình nhập password, Terminal sẽ không hiển thị gì cả, người dùng chủ động nhập đúng password rồi nhấn Enter
+**Note**: When you enter your password, Terminal doesn't show anything. Enter your password correctly and press enter
 
-- Nếu thành công, ta sẽ thu được màn hình Terminal như sau![alt text](./source_code/images/image-16.png)
-- Sử dụng câu lệnh: "CREATE DATABASE important;" để tạo 1 database rỗng (important là tên của database, bạn có thể đổi tên tùy theo bạn muốn)
-- Kết quả nếu thành công![alt text](./source_code/images/image-17.png)
-- Sử dụng câu lệnh "\q" để out ra, trở về màn hình của thư mục bin![alt text](./source_code/images/image-18.png)
-- Sử dụng câu lệnh sau để tiến hành restore dữ liệu từ file "ForumDB.dump": "pg_restore -d important -U postgres D:\ForumDB.dump"
+- If you success, you will have the screen: ![alt text](./source_code/images/image-16.png)
+- Create a new empty database: "CREATE DATABASE important;" (important is the name of database, you can change it if you want)
+- Result: ![alt text](./source_code/images/image-17.png)
+- Exit with "\q" ![alt text](./source_code/images/image-18.png)
+- Restore the database using: "pg_restore -d important -U postgres D:\ForumDB.dump"
 
-**Chú ý**: Nhớ ghi đúng đường link của file "ForumDB.dump" và tên database mà bạn đã tạo, sau khi hoàn thành nhấn Enter![alt text](./source_code/images/image-20.png)
+**Note**: (Replace D:\ForumDB.dump and important with your actual file path and database name.) ![alt text](./source_code/images/image-20.png)
 
-- Bạn cần nhập password 1 lần nữa rồi nhấn Enter
-- Nếu màn hình Terminal hiển thị như này, thì chúng ta đã restore thành công![alt text](./source_code/images/image-21.png)
-- Mở ứng dụng PgAdmin 4 lên và kiểm tra xem database bạn vừa tạo đã được restore dữ liệu thành công chưa
-- Kết quả nếu restore thành công![alt text](./source_code/images/image-22.png)
+- Enter your password again to complete the restore.
+- If you see like that on the screen, it's ok: ![alt text](./source_code/images/image-21.png)
+- Open PgAdmin 4 to verify that the database was restored correctly.
+- Result will like that: ![alt text](./source_code/images/image-22.png)
 
-#### Khởi chạy Backend
-- Tại thư mục backend, nhấn mở thư mục server, sau đó mở thư mục postgres, ta sẽ thấy một file tên là: "postgres.js"
-- Bên trong file "postgres.js", ta sẽ thấy 1 đoạn code như sau![alt text](./source_code/images/image-23.png)
-
+#### Backend Launch
+- In backend folder, open the folder server, open folder postgres, you will see the file: "postgres.js"
+- Inside the file "postgres.js", you will see the some codes like: ![alt text](./source_code/images/image-23.png)
+- We need to update the codes:
 const sequelize = new Sequelize("NextForum", "postgres", "123456789binh", {
   host: "localhost",
   dialect: "postgres",
   timezone: "+07:00",
 });
 
-- Chúng ta sẽ sửa khu vực "NextForum" thành tên database mà bạn đã tạo, ở đây tôi đã tạo là "important", giữ nguyên phần "postgres", phần còn lại là mật khẩu PgAdmin 4 của bạn, thay thế nó. Ví dụ đoạn code sau thay thế:
-const sequelize = new Sequelize("important", "postgres", "matkhauPgAdmin4", {
+- Update "NextForum" to database's name that you created, here I created with the name: "important", don't change "postgres", the last path is your password of PgAdmin 4, replace it. For example:
+const sequelize = new Sequelize("important", "postgres", "passwordPgAdmin4", {
   host: "localhost",
   dialect: "postgres",
   timezone: "+07:00",
 });
 
-- Vậy là đã xong bước set up cho cơ sở dữ liệu
+- That's all to restore database and we have done
 
-- Tại màn hình Terminal lúc nãy của Frontend, chúng ta sẽ mở thêm 1 màn hình terminal nữa![alt text](./source_code/images/image-24.png)
-- Nhấn vào dấu + ở góc trên bên phải để mở thêm màn hình terminal![alt text](./source_code/images/image-25.png)
-- Giờ chúng ta đã có 2 màn hình Terminal, 1 cái cho Frontend, 1 cái cho Backend![alt text](./source_code/images/image-26.png)
-- Chạy các câu lệnh sau để cài đặt tài nguyên cho Backend![alt text](./source_code/images/image-27.png)
-- Cài đặt thành công![alt text](./source_code/images/image-28.png)
-- Chạy câu lệnh "npm run start" để khởi chạy Backend
-- Màn hình hiển thị như này là chúng ta đã thành công![alt text](./source_code/images/image-29.png)
+- Back in the frontend terminal, open a second terminal tab for the backend. ![alt text](./source_code/images/image-24.png)
+- Press + to open a second terminal ![alt text](./source_code/images/image-25.png)
+- Now we have two screens, one for frontend, one for backend ![alt text](./source_code/images/image-26.png)
+- Run the backend install commands. ![alt text](./source_code/images/image-27.png)
+- Result: ![alt text](./source_code/images/image-28.png)
+- Start the backend server using: "npm run start"
+- If the terminal shows success messages, the backend is ready. ![alt text](./source_code/images/image-29.png)
 
-**Chú ý**: Nếu màn hình hiển thị sai khác, vui lòng thực hiện các bước lại từ đầu
+**Note**: If errors occur, repeat the steps carefully.
 
-- Sau khi khởi chạy Backend thành công, chúng ta có thể truy cập vào đường link của trang web: "http://localhost:3000"
+- Once backend is running, visit: "http://localhost:3000" to see the website
 
-**Chú ý**: Quá trình khởi chạy có thể sẽ tốn thời gian, vui lòng chờ đợi để trang load
-- Màn hình hiển thị ra trang chủ của DevShare Lite![alt text](./source_code/images/image-9.png)
+**Node**: Wait for the initial load — compilation may take a few seconds.
+- The Home Page of DevShare Lite ![alt text](./source_code/images/image-9.png)
 
-**Kết quả**: Chúng ta đã mở được trang web và có thể tiến hành các thao tác tại website này !!!!
-**Chú ý**: Trong quá trình thao tác lần đầu, website cần thời gian để compile và load, có thể sẽ mất vài giây cho quá trình đó, vui lòng kiên nhẫn chờ đợi!!
+🎉 **Result**: The DevShare Lite website is now live! You can begin using its features.
+
+**Reminder**: The first-time load may take some time. Please be patient while the website compiles.
